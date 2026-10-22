@@ -1,0 +1,20 @@
+@extends('layouts.admin')
+
+@section('title', 'Edit Kelurahan - Admin Panel')
+@section('page-title', 'Edit Kelurahan')
+
+@section('content')
+<div class="card border-0 shadow-sm">
+    <div class="card-body p-4">
+        <form action="{{ route('admin.kelurahan.update', $kelurahan) }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            @method('PUT')
+            @include('admin.kelurahan._form')
+            <div class="mt-4">
+                <button type="submit" class="btn btn-dark rounded-pill px-4">Perbarui Kelurahan</button>
+                <a href="{{ route('admin.kelurahan.index') }}" class="btn btn-outline-secondary rounded-pill px-4">Batal</a>
+            </div>
+        </form>
+    </div>
+</div>
+@endsection

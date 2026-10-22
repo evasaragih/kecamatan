@@ -1,0 +1,19 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Pejabat extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'nama', 'jabatan', 'deskripsi', 'foto', 'urutan',
+    ];
+
+    protected $casts = [
+        'urutan' => 'integer',
+    ];
+}
